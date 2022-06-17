@@ -1,0 +1,56 @@
+@use "../helpers/variables" as *;
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin keyF($anim-name) {
+  @-webkit-keyframes #{$anim-name} {
+    @content;
+  }
+  @keyframes #{$anim-name} {
+    @content;
+  }
+}
+
+@mixin grid($width, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+  gap: $gap;
+}
+
+@mixin boxshadow($x, $y, $blur, $spread, $color) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin absoluteR($top, $left) {
+  position: absolute;
+  top: $top;
+  right: $left;
+}
+
+@mixin position($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin prop {
+  padding: 30px;
+  text-align: $centeringText;
+  border: 2px solid $titleColor;
+  transition: $trantime;
+}
+
+@mixin rounded($width) {
+  width: $width;
+  height: $width;
+  border-radius: 50%;
+}
+
+@mixin dimentions($width, $height) {
+  width: $width;
+  height: $height;
+}

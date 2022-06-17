@@ -1,0 +1,25 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+header {
+  .contact-info {
+    height: 70px;
+    background-color: $mainColor;
+    .container {
+      height: 100%;
+      .info {
+        @include flex(space-around, center);
+        height: 100%;
+        li {
+          i {
+            margin-right: 10px;
+            color: $iconColor;
+          }
+          span {
+            color: $headColor;
+          }
+        }
+      }
+    }
+  }
+}

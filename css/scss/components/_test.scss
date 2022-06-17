@@ -1,0 +1,78 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+.gallery {
+  .box {
+    @include position(fixed, 0, 0);
+    @include dimentions(100%, 100%);
+    background-color: black;
+    z-index: 2000;
+    overflow: hidden;
+    .exit,
+    .down,
+    .right,
+    .left {
+      color: $paragraphColor;
+      transition: $trantime;
+      cursor: pointer;
+      z-index: 3000;
+      &:hover {
+        color: $headColor;
+      }
+    }
+    .exit {
+      @include absoluteR(10px, 10px);
+    }
+    .down {
+      @include absoluteR(10px, 40px);
+    }
+    .right {
+      @include absoluteR(50%, 20px);
+    }
+    .left {
+      @include position(absolute, 50%, 20px);
+    }
+    .slide-container {
+      height: 100%;
+      overflow: hidden;
+      transition: transform 0.3s ease-out;
+      @include flex(center, center);
+      .slide {
+        padding: 50px;
+        @include dimentions(100%, 100%);
+        @include flex(center, center);
+        user-select: none;
+        overflow: hidden;
+        .img {
+          overflow: hidden;
+          @include dimentions(600px, 350px);
+          @include flex(center, center);
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            cursor: grab;
+            animation: zoom 0.5s linear;
+          }
+        }
+      }
+    }
+    .counter {
+      color: $paragraphColor;
+      transition: $trantime;
+      @include position(absolute, 10px, 20px);
+    }
+  }
+}
+
+@include keyF(zoom) {
+  0% {
+    @include dimentions(0, 0);
+  }
+  50% {
+    @include dimentions(50%, 50%);
+  }
+  100% {
+    @include dimentions(600px, 350px);
+  }
+}

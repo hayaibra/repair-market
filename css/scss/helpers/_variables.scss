@@ -1,0 +1,23 @@
+$maxMobile: "(max-width : 767px)";
+$minSmall: "(min-width : 768px)";
+$maxSmall: "(max-width : 991px)";
+$minMedium: "(min-width : 992px)";
+$maxMedium: "(max-width : 1199px)";
+$minLarge: "(min-width : 1200px)";
+
+/*colors*/
+$mainColor: #2597f4;
+$iconColor: #ffff00;
+$headColor: #ffffff;
+$titleColor: #333344;
+$paragraphColor: #777;
+$backgroundColor: #f5f5f5;
+
+/*transition*/
+$trantime: 0.5s;
+
+/*text*/
+$centeringText: center;
+
+/*border*/
+$border: 2px solid $titleColor;

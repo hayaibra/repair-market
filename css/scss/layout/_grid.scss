@@ -1,0 +1,32 @@
+@use "../helpers/variables" as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $mainColor;
+  border-radius: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  position: relative;
+  @media #{$minSmall} {
+    width: 750px;
+  }
+  @media #{$minMedium} {
+    width: 970px;
+  }
+  @media #{$minLarge} {
+    width: 1170px;
+  }
+}

@@ -1,0 +1,103 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+footer {
+  background-color: $backgroundColor;
+  .container {
+    @include grid(250px, 25px);
+    border-bottom: $border;
+    padding-bottom: 20px;
+    .box {
+      h2 {
+        color: $titleColor;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .opt {
+        li {
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+
+          i {
+            color: $mainColor;
+            margin-right: 10px;
+          }
+          a {
+            color: $paragraphColor;
+            transition: $trantime;
+            &:hover {
+              padding-left: 20px;
+              color: $mainColor;
+            }
+          }
+        }
+      }
+      .open {
+        li {
+          color: $paragraphColor;
+          padding: 10px 0;
+          span {
+            color: $mainColor;
+          }
+        }
+      }
+      .info {
+        li {
+          padding: 10px 0;
+          i {
+            color: $mainColor;
+            margin-right: 5px;
+          }
+          span {
+            color: $paragraphColor;
+          }
+        }
+      }
+    }
+    .box:last-child {
+      p {
+        color: $paragraphColor;
+        margin-bottom: 10px;
+      }
+      input {
+        border: $border;
+        outline: none;
+        width: 100%;
+        padding: 10px;
+      }
+      .icons {
+        @include flex(start, center);
+        height: 50px;
+        li {
+          @include dimentions(50px, 100%);
+          background-color: $titleColor;
+          transition: $trantime;
+          cursor: pointer;
+          @include flex(center, center);
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+          &:hover {
+            background-color: $mainColor;
+          }
+          i {
+            color: $headColor;
+          }
+        }
+      }
+    }
+  }
+  .text {
+    text-align: $centeringText;
+    color: $titleColor;
+    padding-top: 35px;
+    font-size: 20px;
+    @media #{$maxMobile} {
+      max-width: 100%;
+    }
+    span {
+      color: $mainColor;
+    }
+  }
+}

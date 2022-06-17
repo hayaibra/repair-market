@@ -1,0 +1,74 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+.navbar {
+  height: 70px;
+  z-index: 1000;
+  border-bottom: $border;
+  position: relative;
+  background-color: $headColor;
+  @media #{$maxMobile} {
+    @include position(fixed, 0, 0);
+    right: 0;
+    width: 100%;
+  }
+  .container {
+    @include flex(space-between, center);
+    height: 100%;
+    .logo {
+      @include flex(center, center);
+      i {
+        color: $mainColor;
+        font-size: 25px;
+        margin-right: 5px;
+      }
+      span {
+        color: $titleColor;
+        font: {
+          size: 30px;
+          weight: bold;
+        }
+      }
+    }
+    .navs {
+      display: flex;
+      @media #{$maxMobile} {
+        background-color: $headColor;
+        @include position(absolute, 104%, 0);
+        right: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        flex-direction: column;
+        border-bottom: 2px solid $titleColor;
+        transition: $trantime;
+        &.active {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+      li {
+        a {
+          color: $titleColor;
+          margin-right: 20px;
+          font-size: 20px;
+          &:hover {
+            text-decoration: underline;
+            color: $mainColor;
+          }
+          @media #{$maxMobile} {
+            padding: 15px;
+          }
+        }
+      }
+    }
+    .icon {
+      @media #{$minSmall} {
+        display: none;
+      }
+      i {
+        color: $titleColor;
+        font-size: 25px;
+        cursor: pointer;
+        transition: $trantime;
+      }
+    }
+  }
+}

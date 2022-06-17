@@ -1,0 +1,27 @@
+@use "../helpers/mixins" as *;
+
+@include keyF(rot) {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.rotate {
+  animation: rot 0.3s linear both;
+}
+
+@include keyF(rev) {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+.reverse {
+  animation: rev 0.3s linear both;
+}

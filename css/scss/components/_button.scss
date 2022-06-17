@@ -1,0 +1,17 @@
+@use "../helpers/variables" as *;
+
+.button {
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: 2px solid $titleColor;
+  font-size: 18px;
+  color: $titleColor;
+  cursor: pointer;
+  transition: $trantime;
+  &:hover {
+    background-color: $mainColor;
+    color: $headColor;
+    border-color: $mainColor;
+  }
+}

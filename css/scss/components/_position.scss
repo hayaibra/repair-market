@@ -1,0 +1,10 @@
+@use "../helpers/mixins" as *;
+
+.pos {
+  @include position(fixed, 0, 0);
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: none;
+  box-shadow: 1px 3px 8px 0 #7776;
+}

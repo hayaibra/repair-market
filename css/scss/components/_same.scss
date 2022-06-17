@@ -1,0 +1,45 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+.same {
+  background-color: $backgroundColor;
+  .container {
+    @include grid(300px, 20px);
+    .square {
+      background-color: $headColor;
+      border: $border;
+      padding: 20px;
+      text-align: $centeringText;
+      transition: $trantime;
+      &:hover {
+        background-color: $titleColor;
+        .text {
+          h3 {
+            color: $headColor;
+          }
+          p {
+            color: $headColor;
+          }
+        }
+      }
+      .image {
+        @include dimentions(60px, 60px);
+        margin: 0 auto 20px;
+        img {
+          width: 100%;
+        }
+      }
+      .text {
+        h3 {
+          color: $titleColor;
+          margin-bottom: 20px;
+          transition: $trantime;
+        }
+        p {
+          color: $paragraphColor;
+          transition: $trantime;
+        }
+      }
+    }
+  }
+}

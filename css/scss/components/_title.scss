@@ -1,0 +1,12 @@
+@use "../helpers/variables" as *;
+
+.title {
+  text-align: $centeringText;
+  h1 {
+    color: $titleColor;
+    font-size: 50px;
+    span {
+      color: $mainColor;
+    }
+  }
+}
